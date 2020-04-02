@@ -28,9 +28,9 @@ resource "azurerm_kubernetes_cluster" "aks" {
     max_pods            = "${var.node_pod_count}"
     vnet_subnet_id      = "${azurerm_subnet.subnet_aks.id}"
     type                = "VirtualMachineScaleSets"
-    enable_auto_scaling = false
-    # min_count             = 2
-    # max_count             = 50
+    enable_auto_scaling = true
+    min_count           = 3
+    max_count           = 20
   }
 
   service_principal {
@@ -66,6 +66,7 @@ resource "azurerm_kubernetes_cluster" "aks" {
 
   tags = {
     Environment = "${var.environment}"
+    wid = "100117"
   }
 }
 
@@ -78,5 +79,8 @@ resource "azurerm_kubernetes_cluster_node_pool" "gpupool1" {
   os_disk_size_gb       = "${var.node_disk_size}"
   max_pods              = "${var.node_pod_count}"
   vnet_subnet_id        = "${azurerm_subnet.subnet_aks.id}"
-  node_taints           = [ "dedicated=gpu:NoSchedule" ]
+  node_taints           = ["dedicated=gpu:NoSchedule"]
+  enable_auto_scaling   = true
+  min_count             = 1
+  max_count             = 5
 }
