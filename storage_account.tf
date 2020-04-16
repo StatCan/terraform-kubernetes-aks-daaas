@@ -9,7 +9,8 @@ resource "azurerm_storage_account" "sa_vault" {
   account_replication_type = "LRS"
   # enable_blob_encryption = "True"
   # enable_file_encryption = "True"
-  access_tier = "Hot"
+  access_tier               = "Hot"
+  enable_https_traffic_only = true
 }
 
 resource "azurerm_storage_container" "sc_vault" {
@@ -28,7 +29,8 @@ resource "azurerm_storage_account" "sa_velero" {
   account_replication_type = "LRS"
   # enable_blob_encryption = "True"
   # enable_file_encryption = "True"
-  access_tier = "Hot"
+  access_tier               = "Hot"
+  enable_https_traffic_only = true
 }
 
 resource "azurerm_storage_container" "sc_velero" {

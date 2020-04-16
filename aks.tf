@@ -39,6 +39,10 @@ resource "azurerm_kubernetes_cluster" "aks" {
   }
 
   addon_profile {
+    azure_policy {
+      enabled = false
+    }
+
     oms_agent {
       enabled                    = true
       log_analytics_workspace_id = "${azurerm_log_analytics_workspace.workspace_aks.id}"
@@ -68,6 +72,13 @@ resource "azurerm_kubernetes_cluster" "aks" {
     Environment = "${var.environment}"
     wid         = "100117"
   }
+
+  lifecycle {
+    ignore_changes = [
+      # Since autoscaling is enabled, let's ignore changes to the node count.
+      default_node_pool[0].node_count,
+    ]
+  }
 }
 
 resource "azurerm_kubernetes_cluster_node_pool" "gpupool1" {
@@ -83,4 +94,11 @@ resource "azurerm_kubernetes_cluster_node_pool" "gpupool1" {
   enable_auto_scaling   = true
   min_count             = 1
   max_count             = 5
+
+  lifecycle {
+    ignore_changes = [
+      # Since autoscaling is enabled, let's ignore changes to the node count.
+      node_count,
+    ]
+  }
 }
