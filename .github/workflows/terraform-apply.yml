@@ -14,8 +14,8 @@ jobs:
         env:
           SSH_KEY: ${{ secrets.SSH_KEY }}
         run: |
-          mkdir -p ~/.ssh/
-          echo "$SSH_KEY" | base64 --decode > ~/.ssh/covid.pub
+          mkdir -p /home/runner/work/_temp/_github_home/.ssh/
+          echo "$SSH_KEY" | base64 --decode > /home/runner/work/_temp/_github_home/.ssh/covid.pub
       - name: 'Checkout'
         uses: actions/checkout@master
       - name: 'Terraform Init'
