@@ -31,6 +31,17 @@ jobs:
           ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
           ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
           ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
+          TF_VAR_admin_username: ${{ secrets.TF_VAR_admin_username }}
+          TF_VAR_environment: ${{ secrets.TF_VAR_environment }}
+          TF_VAR_georeplication_region: ${{ secrets.TF_VAR_georeplication_region }}
+          TF_VAR_kube_version: ${{ secrets.TF_VAR_kube_version }}
+          TF_VAR_location: ${{ secrets.TF_VAR_location }}
+          TF_VAR_node_code: ${{ secrets.TF_VAR_node_count }}
+          TF_VAR_prefix: ${{ secrets.TF_VAR_prefix }}
+          TF_VAR_public_ssh_key_path: ${{ secrets.TF_VAR_public_ssh_key_path }}
+          TF_VAR_short_prefix: ${{ secrets.TF_VAR_short_prefix }}
+          TF_VAR_ssh_key: ${{ secrets.TF_VAR_ssh_key }}
+          TF_VAR_subscription_id: ${{ secrets.TF_VAR_subscription_id }}
       - name: 'Terraform Validate'
         uses: hashicorp/terraform-github-actions@master
         with:
@@ -43,6 +54,17 @@ jobs:
           ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
           ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
           ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
+          TF_VAR_admin_username: ${{ secrets.TF_VAR_admin_username }}
+          TF_VAR_environment: ${{ secrets.TF_VAR_environment }}
+          TF_VAR_georeplication_region: ${{ secrets.TF_VAR_georeplication_region }}
+          TF_VAR_kube_version: ${{ secrets.TF_VAR_kube_version }}
+          TF_VAR_location: ${{ secrets.TF_VAR_location }}
+          TF_VAR_node_code: ${{ secrets.TF_VAR_node_count }}
+          TF_VAR_prefix: ${{ secrets.TF_VAR_prefix }}
+          TF_VAR_public_ssh_key_path: ${{ secrets.TF_VAR_public_ssh_key_path }}
+          TF_VAR_short_prefix: ${{ secrets.TF_VAR_short_prefix }}
+          TF_VAR_ssh_key: ${{ secrets.TF_VAR_ssh_key }}
+          TF_VAR_subscription_id: ${{ secrets.TF_VAR_subscription_id }}
       - name: 'Terraform Apply'
         uses: hashicorp/terraform-github-actions@master
         if: github.event.pull_request.merged == true
@@ -56,3 +78,14 @@ jobs:
           ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
           ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
           ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
+          TF_VAR_admin_username: ${{ secrets.TF_VAR_admin_username }}
+          TF_VAR_environment: ${{ secrets.TF_VAR_environment }}
+          TF_VAR_georeplication_region: ${{ secrets.TF_VAR_georeplication_region }}
+          TF_VAR_kube_version: ${{ secrets.TF_VAR_kube_version }}
+          TF_VAR_location: ${{ secrets.TF_VAR_location }}
+          TF_VAR_node_code: ${{ secrets.TF_VAR_node_count }}
+          TF_VAR_prefix: ${{ secrets.TF_VAR_prefix }}
+          TF_VAR_public_ssh_key_path: ${{ secrets.TF_VAR_public_ssh_key_path }}
+          TF_VAR_short_prefix: ${{ secrets.TF_VAR_short_prefix }}
+          TF_VAR_ssh_key: ${{ secrets.TF_VAR_ssh_key }}
+          TF_VAR_subscription_id: ${{ secrets.TF_VAR_subscription_id }}
