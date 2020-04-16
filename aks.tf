@@ -66,7 +66,7 @@ resource "azurerm_kubernetes_cluster" "aks" {
 
   tags = {
     Environment = "${var.environment}"
-    wid = "100117"
+    wid         = "100117"
   }
 }
 

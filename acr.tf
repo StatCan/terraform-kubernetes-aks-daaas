@@ -10,6 +10,6 @@ resource "azurerm_container_registry" "acr" {
 
   tags = {
     Environment = "${var.environment}"
-    wid = "100117"
+    wid         = "100117"
   }
 }
