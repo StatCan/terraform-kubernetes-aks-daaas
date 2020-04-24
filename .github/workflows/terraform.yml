@@ -47,6 +47,7 @@ jobs:
           TF_VAR_short_prefix: ${{ secrets.TF_VAR_short_prefix }}
           TF_VAR_ssh_key: ${{ secrets.TF_VAR_ssh_key }}
           TF_VAR_subscription_id: ${{ secrets.TF_VAR_subscription_id }}
+          TF_VAR_tenant_id: ${{ secrets.TF_VAR_tenant_id }}
       - name: 'Terraform Validate'
         uses: hashicorp/terraform-github-actions@master
         with:
@@ -70,6 +71,7 @@ jobs:
           TF_VAR_short_prefix: ${{ secrets.TF_VAR_short_prefix }}
           TF_VAR_ssh_key: ${{ secrets.TF_VAR_ssh_key }}
           TF_VAR_subscription_id: ${{ secrets.TF_VAR_subscription_id }}
+          TF_VAR_tenant_id: ${{ secrets.TF_VAR_tenant_id }}
       - name: 'Terraform Plan'
         uses: hashicorp/terraform-github-actions@master
         with:
@@ -93,3 +95,4 @@ jobs:
           TF_VAR_short_prefix: ${{ secrets.TF_VAR_short_prefix }}
           TF_VAR_ssh_key: ${{ secrets.TF_VAR_ssh_key }}
           TF_VAR_subscription_id: ${{ secrets.TF_VAR_subscription_id }}
+          TF_VAR_tenant_id: ${{ secrets.TF_VAR_tenant_id }}
