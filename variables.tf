@@ -99,6 +99,10 @@ variable "subscription_id" {
   description = "The Subscription ID for the Service Principal to use for this Managed Kubernetes Cluster"
 }
 
+variable "tenant_id" {
+  description = "The Tenant ID for the Service Principal to use for this Managed Kubernetes Cluster"
+}
+
 variable "gpu_node_size" {
   description = "GPU VM Size for each Kubernetes worker node."
   default     = "Standard_NC6s_v3"
