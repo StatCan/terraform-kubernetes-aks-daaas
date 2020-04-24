@@ -1,7 +1,7 @@
 # Key Vault
 
 resource "azurerm_key_vault" "vault" {
-  name                        = "${var.prefix}-vault"
+  name                        = "${var.short_prefix}-vault"
   location                    = "${azurerm_resource_group.rg_vault.location}"
   resource_group_name         = "${azurerm_resource_group.rg_vault.name}"
   enabled_for_disk_encryption = true
