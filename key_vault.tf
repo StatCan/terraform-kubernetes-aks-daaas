@@ -11,7 +11,7 @@ resource "azurerm_key_vault" "vault" {
 
   access_policy {
     tenant_id = "${var.tenant_id}"
-    object_id = "${azuread_service_principal.vault.object_id}"
+    object_id = "${azurerm_user_assigned_identity.vault.principal_id}"
 
     key_permissions = [
       "get",
