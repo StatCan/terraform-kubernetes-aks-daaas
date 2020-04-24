@@ -3,6 +3,11 @@
 resource "azurerm_resource_group" "rg_network_development" {
   name     = "${var.prefix}-network-development"
   location = "${var.location}"
+
+  tags = {
+    Environment = "${var.environment}"
+    wid         = "100117"
+  }
 }
 
 resource "azurerm_resource_group" "rg_aks" {
@@ -11,6 +16,7 @@ resource "azurerm_resource_group" "rg_aks" {
 
   tags = {
     Environment = "${var.environment}"
+    wid         = "100117"
   }
 }
 
@@ -20,6 +26,7 @@ resource "azurerm_resource_group" "rg_vault" {
 
   tags = {
     Environment = "${var.environment}"
+    wid         = "100117"
   }
 }
 
@@ -29,5 +36,6 @@ resource "azurerm_resource_group" "rg_velero" {
 
   tags = {
     Environment = "${var.environment}"
+    wid         = "100117"
   }
 }
