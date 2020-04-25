@@ -220,6 +220,7 @@ resource "azuread_service_principal_password" "velero" {
 
 resource "azuread_application" "vault" {
   name                    = "COVID Vault"
+  homepage                = "https://vault.covid.cloud.statcan.ca"
   reply_urls              = ["https://vault.covid.cloud.statcan.ca/ui/vault/auth/oidc/oidc/callback", "http://localhost:8250/oidc/callback"]
   type                    = "webapp/api"
   group_membership_claims = "All"
