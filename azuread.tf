@@ -225,6 +225,13 @@ resource "azuread_application" "vault" {
   group_membership_claims = "All"
 }
 
+resource "azurerm_user_assigned_identity" "vault" {
+  resource_group_name = "${azurerm_resource_group.rg_vault.name}"
+  location            = "${azurerm_resource_group.rg_vault.location}"
+
+  name = "vault"
+}
+
 resource "azuread_service_principal" "vault" {
   application_id = "${azuread_application.vault.application_id}"
 }
