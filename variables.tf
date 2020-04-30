@@ -46,6 +46,11 @@ variable "node_count" {
   default     = 3
 }
 
+variable "new_node_size" {
+  description = "VM Size for each Kubernetes worker node"
+  default     = "Standard_D16s_v3"
+}
+
 variable "node_size" {
   description = "VM Size for each Kubernetes worker node"
   default     = "Standard_D8s_v3"

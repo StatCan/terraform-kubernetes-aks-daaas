@@ -126,7 +126,7 @@ resource "azurerm_kubernetes_cluster" "new_aks" {
   default_node_pool {
     name                = "nodepool1"
     node_count          = "${var.node_count}"
-    vm_size             = "${var.node_size}"
+    vm_size             = "${var.new_node_size}"
     os_disk_size_gb     = "${var.node_disk_size}"
     max_pods            = "${var.node_pod_count}"
     vnet_subnet_id      = "${azurerm_subnet.new_subnet_aks.id}"
