@@ -103,6 +103,12 @@ resource "azurerm_kubernetes_cluster_node_pool" "gpupool1" {
   }
 }
 
+resource "random_password" "windows_password" {
+  length           = 16
+  special          = true
+  override_special = "_%@$"
+}
+
 resource "azurerm_kubernetes_cluster" "new_aks" {
   name                = "${var.new_prefix}-aks"
   location            = "${azurerm_resource_group.rg_aks.location}"
@@ -121,6 +127,7 @@ resource "azurerm_kubernetes_cluster" "new_aks" {
 
   windows_profile {
     admin_username = "azureuser"
+    admin_password = random_password.windows_password.result
   }
 
   default_node_pool {
