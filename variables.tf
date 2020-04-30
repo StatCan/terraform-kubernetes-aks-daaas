@@ -78,6 +78,11 @@ variable "network_policy" {
   default     = "azure"
 }
 
+variable "new_docker_bridge_cidr" {
+  description = "Docker bridge CIDR"
+  default     = "10.255.0.1/16"
+}
+
 variable "docker_bridge_cidr" {
   description = "Docker bridge CIDR"
   default     = "172.17.0.1/16"
