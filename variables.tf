@@ -1,3 +1,11 @@
+variable "new_prefix" {
+  description = "A prefix used for all resources in this example"
+}
+
+variable "new_short_prefix" {
+  description = "A short prefix used for all resources in this example"
+}
+
 variable "prefix" {
   description = "A prefix used for all resources in this example"
 }
@@ -78,6 +86,16 @@ variable "dns_service_ip" {
 variable "service_cidr" {
   description = "Service CIDR"
   default     = "10.0.0.0/16"
+}
+
+variable "new_vnet_cidr" {
+  description = "Virtual Network CIDR"
+  default     = "172.16.0.0/12"
+}
+
+variable "new_subnet_cidr" {
+  description = "Container Subnet CIDR"
+  default     = "172.16.0.0/14"
 }
 
 variable "vnet_cidr" {

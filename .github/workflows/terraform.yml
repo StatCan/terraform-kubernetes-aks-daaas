@@ -41,6 +41,8 @@ jobs:
           TF_VAR_georeplication_region: ${{ secrets.TF_VAR_georeplication_region }}
           TF_VAR_kube_version: ${{ secrets.TF_VAR_kube_version }}
           TF_VAR_location: ${{ secrets.TF_VAR_location }}
+          TF_VAR_new_prefix: ${{ secrets.TF_VAR_new_prefix }}
+          TF_VAR_new_short_prefix: ${{ secrets.TF_VAR_new_short_prefix }}
           TF_VAR_node_code: ${{ secrets.TF_VAR_node_count }}
           TF_VAR_prefix: ${{ secrets.TF_VAR_prefix }}
           TF_VAR_public_ssh_key_path: ${{ secrets.TF_VAR_public_ssh_key_path }}
@@ -65,6 +67,8 @@ jobs:
           TF_VAR_georeplication_region: ${{ secrets.TF_VAR_georeplication_region }}
           TF_VAR_kube_version: ${{ secrets.TF_VAR_kube_version }}
           TF_VAR_location: ${{ secrets.TF_VAR_location }}
+          TF_VAR_new_prefix: ${{ secrets.TF_VAR_new_prefix }}
+          TF_VAR_new_short_prefix: ${{ secrets.TF_VAR_new_short_prefix }}
           TF_VAR_node_code: ${{ secrets.TF_VAR_node_count }}
           TF_VAR_prefix: ${{ secrets.TF_VAR_prefix }}
           TF_VAR_public_ssh_key_path: ${{ secrets.TF_VAR_public_ssh_key_path }}
@@ -89,6 +93,8 @@ jobs:
           TF_VAR_georeplication_region: ${{ secrets.TF_VAR_georeplication_region }}
           TF_VAR_kube_version: ${{ secrets.TF_VAR_kube_version }}
           TF_VAR_location: ${{ secrets.TF_VAR_location }}
+          TF_VAR_new_prefix: ${{ secrets.TF_VAR_new_prefix }}
+          TF_VAR_new_short_prefix: ${{ secrets.TF_VAR_new_short_prefix }}
           TF_VAR_node_code: ${{ secrets.TF_VAR_node_count }}
           TF_VAR_prefix: ${{ secrets.TF_VAR_prefix }}
           TF_VAR_public_ssh_key_path: ${{ secrets.TF_VAR_public_ssh_key_path }}
