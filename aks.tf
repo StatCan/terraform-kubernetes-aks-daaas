@@ -162,7 +162,7 @@ resource "azurerm_kubernetes_cluster" "new_aks" {
   network_profile {
     network_plugin     = "${var.network_plugin}"
     network_policy     = "${var.network_policy}"
-    docker_bridge_cidr = "${var.docker_bridge_cidr}"
+    docker_bridge_cidr = "${var.new_docker_bridge_cidr}"
     dns_service_ip     = "${var.dns_service_ip}"
     service_cidr       = "${var.service_cidr}"
     load_balancer_sku  = "${var.load_balancer_sku}"
