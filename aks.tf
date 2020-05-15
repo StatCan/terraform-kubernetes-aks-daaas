@@ -36,7 +36,7 @@ resource "azurerm_kubernetes_cluster" "new_aks" {
     type                = "VirtualMachineScaleSets"
     enable_auto_scaling = true
     min_count           = 3
-    max_count           = 20
+    max_count           = 35
   }
 
   service_principal {
