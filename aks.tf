@@ -99,7 +99,7 @@ resource "azurerm_kubernetes_cluster_node_pool" "new_gpupool1" {
   node_taints           = ["dedicated=gpu:NoSchedule"]
   enable_auto_scaling   = true
   min_count             = 1
-  max_count             = 5
+  max_count             = 16
 
   lifecycle {
     ignore_changes = [
