@@ -49,6 +49,10 @@ resource "azurerm_kubernetes_cluster" "new_aks" {
       enabled = false
     }
 
+    kube_dashboard {
+      enabled = false
+    }
+
     oms_agent {
       enabled                    = false
       log_analytics_workspace_id = "${azurerm_log_analytics_workspace.workspace_aks.id}"
